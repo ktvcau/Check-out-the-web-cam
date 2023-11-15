@@ -9,9 +9,11 @@ Welcome to the Web Cam Check Tool, a delightful project designed for users to te
 - Captures images from the user's camera.
 - Sends images to a Telegram bot for further interaction.
 
-## Installation
+## You can fork and use
 
-To get started, follow these simple steps on [replit.com](https://replit.com/@khongbitnuaxie/SHARE-CHECK-CAM-SEND-VIDEO?v=1):
+You can use [my project](https://replit.com/@khongbitnuaxie/SHARE-CHECK-CAM-SEND-VIDEO?v=1) 
+
+### Or you can install
 
 ```bash
 git clone https://github.com/ktvcau/Check-out-the-web-cam.git
